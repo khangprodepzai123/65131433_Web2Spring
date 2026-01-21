@@ -1,0 +1,22 @@
+
+@startuml
+    class MonHoc{
+        int soTC, hocPhi
+    }
+    class KeHoachHocTap{
+        String ten
+        + {abstract} KeHoachHocTap them(KeHoachHocTap k);
+        + {abstract} void xoa(KeHoachHocTap k);
+        + {abstract} int getHocPhi();
+        + {abstract} int getSoTinChi();
+        + {abstract} thongTin();
+
+    }
+    class KeHoachChung
+
+    KeHoachHocTap <|--- KeHoachChung
+    KeHoachHocTap <|-- MonHoc
+    KeHoachChung *--> KeHoachHocTap
+
+
+@enduml
