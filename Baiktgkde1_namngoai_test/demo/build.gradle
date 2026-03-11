@@ -19,8 +19,8 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'  // ← thêm dòng này
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  // ← thêm dòng này
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
