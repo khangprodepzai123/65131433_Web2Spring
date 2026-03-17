@@ -1,38 +1,55 @@
-package giakhang_65131433.demo.Model;
+package thiGK.ntu65133236.phansithanh_fitCMS.models;
 
 public class Page {
-    private int id;
-    private String pageName;
-    private String keyword;
-    private String content;
-    private int parentPageId;
+	int id;
+	String pageName, keyword, content, parentPageId;
 
-    public Page(int id, String pageName, String keyword, String content, int parentPageId) {
-        this.id = id;
-        this.pageName = pageName;
-        this.keyword = keyword;
-        this.content = content;
-        this.parentPageId = parentPageId;
-    }
+	public Page(int id, String pageName, String keyword, String content, String parentPageId) {
+		this.id = id;
+		this.pageName = pageName;
+		this.keyword = keyword;
+		this.content = content;
+		this.parentPageId = parentPageId;
+	}
 
-    // Getters
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getPageName() {
-        return pageName;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getKeyword() {
-        return keyword;
-    }
+	public String getPageName() {
+		return pageName;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setPageName(String pageName) {
+		this.pageName = pageName;
+	}
 
-    public int getParentPageId() {
-        return parentPageId;
-    }
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getParentPageId() {
+		return parentPageId;
+	}
+
+	public void setParentPageId(String parentPageId) {
+		this.parentPageId = parentPageId;
+	}
+
 }

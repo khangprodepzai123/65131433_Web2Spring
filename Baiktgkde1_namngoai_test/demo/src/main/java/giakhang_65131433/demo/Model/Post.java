@@ -1,21 +1,45 @@
-package giakhang_65131433.demo.Model;
+package thiGK.ntu65133236.phansithanh_fitCMS.models;
 
 public class Post {
-    private int id;
-    private String title;
-    private String content;
-    private int categoryId;
+	String id, title, content, categoryId;
 
-    public Post(int id, String title, String content, int categoryId) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.categoryId = categoryId;
-    }
+	public Post(String id, String title, String content, String categoryId) {
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.categoryId = categoryId;
+	}
 
-    // Getters
-    public int getId() { return id; }
-    public String getTitle() { return title; }
-    public String getContent() { return content; }
-    public int getCategoryId() { return categoryId; }
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
 }
