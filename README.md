@@ -1,4 +1,2 @@
-# 65131433\_Web2Spring
-
-
+# .\\gradlew.bat bootRun
 
