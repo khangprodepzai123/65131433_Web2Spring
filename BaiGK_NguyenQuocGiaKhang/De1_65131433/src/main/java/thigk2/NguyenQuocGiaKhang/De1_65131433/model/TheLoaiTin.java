@@ -1,6 +1,8 @@
 package thigk2.NguyenQuocGiaKhang.De1_65131433.model;
 import jakarta.persistence.*;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "the_loai_tin")
 public class TheLoaiTin {
@@ -12,6 +14,7 @@ public class TheLoaiTin {
     @Column(name = "ten_the_loai", nullable = false, length = 100)
     private String tenTheLoai;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "theLoaiTin", cascade = CascadeType.ALL)
     private List<Tin> danhSachTin;
 

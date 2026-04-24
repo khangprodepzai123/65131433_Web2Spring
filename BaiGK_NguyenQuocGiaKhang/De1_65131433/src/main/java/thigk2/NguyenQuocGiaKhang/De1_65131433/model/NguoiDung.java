@@ -2,6 +2,8 @@ package thigk2.NguyenQuocGiaKhang.De1_65131433.model;
 
 import jakarta.persistence.*;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "nguoi_dung")
@@ -23,6 +25,7 @@ public class NguoiDung {
     @Column(name = "email", length = 100)
     private String email;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "nguoiDung", cascade = CascadeType.ALL)
     private List<Tin> danhSachTin;
 
