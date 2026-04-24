@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><meta charset="UTF-8"><title>Dashboard</title></head>
+<head><meta charset="UTF-8"><title th:text="${tieuDeTrang}">Danh sách tin</title></head>
 <body>
-    <h1>Dashboard Tin Tức</h1>
-    <p>Tổng số tin: <strong th:text="${tongSoTin}"></strong></p>
-    <p>Tổng thể loại: <strong th:text="${tongSoTheLoai}"></strong></p>
+    <a href="/">← Dashboard</a>
+    <h1 th:text="${tieuDeTrang}">Danh sách tin</h1>
 
-    <h2>Thể loại</h2>
-    <ul>
-        <li th:each="tl : ${danhSachTheLoai}">
-            <a th:href="@{/tin/the-loai/{id}(id=${tl.id})}" th:text="${tl.tenTheLoai}"></a>
-        </li>
-    </ul>
+    <h3>Lọc theo thể loại:</h3>
+    <a href="/tin">[Tất cả]</a>
+    <span th:each="tl : ${danhSachTheLoai}">
+        | <a th:href="@{/tin/the-loai/{id}(id=${tl.id})}" th:text="${tl.tenTheLoai}"></a>
+    </span>
 
-    <h2>Tất cả tin — <a href="/tin">Xem tất cả</a></h2>
+    <br><br>
     <table border="1" cellpadding="8">
         <thead>
             <tr><th>#</th><th>Tiêu đề</th><th>Thể loại</th><th>Người đăng</th><th>Ngày đăng</th></tr>
@@ -25,6 +23,9 @@
                 <td th:text="${tin.theLoaiTin.tenTheLoai}"></td>
                 <td th:text="${tin.nguoiDung.hoTen}"></td>
                 <td th:text="${#temporals.format(tin.ngayDang, 'dd/MM/yyyy HH:mm')}"></td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(danhSachTin)}">
+                <td colspan="5">Không có tin nào.</td>
             </tr>
         </tbody>
     </table>

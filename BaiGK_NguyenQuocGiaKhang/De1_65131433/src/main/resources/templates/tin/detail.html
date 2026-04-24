@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Chi tiết tin</title></head>
+<body>
+    <a href="/tin">← Quay lại</a>
+
+    <div th:if="${tin != null}">
+        <h1 th:text="${tin.tieuDe}"></h1>
+        <p>Thể loại: <strong th:text="${tin.theLoaiTin.tenTheLoai}"></strong></p>
+        <p>Người đăng: <strong th:text="${tin.nguoiDung.hoTen}"></strong></p>
+        <p>Ngày đăng: <span th:text="${#temporals.format(tin.ngayDang, 'dd/MM/yyyy HH:mm')}"></span></p>
+        <hr>
+        <p th:text="${tin.noiDung}"></p>
+    </div>
+
+    <div th:if="${tin == null}">
+        <p>Không tìm thấy tin này.</p>
+    </div>
+</body>
+</html>
