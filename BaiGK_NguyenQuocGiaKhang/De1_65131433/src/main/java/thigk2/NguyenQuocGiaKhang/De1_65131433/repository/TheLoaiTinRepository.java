@@ -7,5 +7,4 @@ import java.util.List;
 
 @Repository
 public interface TheLoaiTinRepository extends JpaRepository<TheLoaiTin, Integer> {
-    List<TheLoaiTin> findByTenTheLoaiContainingIgnoreCase(String keyword);
 }
